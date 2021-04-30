@@ -1,4 +1,3 @@
-
 CLASSDIR = ../test
 INCLUDE = -I$(CLASSDIR)/include
 LIBS = $(CLASSDIR)/lib/libfdr.a
