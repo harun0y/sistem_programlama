@@ -27,18 +27,16 @@ int main(int argc, char **argv)
   	}
 	
   	while(get_line(file) >= 0) {
-    	
-    		if(file->NF != 1){
-    			kelime = strtok(file->fields[file->NF-2], "\""); //strtok tırnaklardan ayırıyor
-				kod = strtok(file->fields[file->NF-1], "\""); 
+    	if(file->NF != 1){
+    		kelime = strtok(file->fields[file->NF-2], "\""); //strtok tırnaklardan ayırıyor
+			kod = strtok(file->fields[file->NF-1], "\""); 
 
-    			(void) jrb_insert_str(b, strdup(kelime), new_jval_s(strdup(kod)));
-    		}
-      	
+   			(void) jrb_insert_str(b, strdup(kelime), new_jval_s(strdup(kod)));
+   		}      	
     }
 	
 	jrb_traverse(bn,b) {
-    	printf("%s\t%s\n", bn->key.s, bn->val.s);	
+    	printf("%s: %s\n", bn->key.s, bn->val.s);	
   	}
 	
   	jettison_inputstruct(file);
