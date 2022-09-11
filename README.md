@@ -1,2 +1,1 @@
-# sist_prog
- 
+# Huffman Kodlama ve Çözümleme
